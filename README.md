@@ -95,7 +95,7 @@ count = local.subnet_length
 vpc_id = aws_vpc.main.id 
 cidr_block = cidrsubnet(var.vpc_cidr, 4, "${count.index + local.subnet_length}") 
 availability_zone = data.aws_availability_zones.azs.names[count.index] 
-map_public_ip_on_launch = true 
+map_public_ip_on_launch = false
 tags = { 
 Name = "${var.project_name}-${var.project_env}-private-${count.index + 1}" 
 } 
